@@ -109,23 +109,42 @@
 
 ; Exercise 3.3.2
 
+(define PI 3.14159)
 (define TAU 6.28318)
 
-(define (radius-of-disk r)
-  (* (/ TAU 2)
-     (* r r)))
+(define (area-of-disk radius)
+  (* (/ TAU 2) radius radius))
 
 (define (volume-cylinder radius height)
-  (* (radius-of-disk radius) height))
+  (* (area-of-disk radius) height))
 
 ; expected 282.74, got 282.7431
 ; (volume-cylinder 3 10)
 
 ; Exercise 3.3.3
 
-(define (surface-area-cylinder radius height)
+(define (area-cylinder radius height)
   (+ (* TAU (* radius radius))
      (* TAU (* radius height))))
 
 ; expected 245.04, got 245.04402
 ; (surface-area-cylinder 3 10)
+
+; Exercise 3.3.4
+
+; (define (area-pipe-one inner len thickness))
+
+(define (area-of-ring inner outer)
+  (- (area-of-disk outer)
+     (area-of-disk inner)))
+
+(define (area-of-cylinder-side radius height)
+  (* TAU (* radius height)))
+
+(define (area-pipe inner len thickness)
+  (+ (* 2 (area-of-ring inner (+ inner thickness)))
+     (area-of-cylinder-side inner len)
+     (area-of-cylinder-side (+ inner thickness) len)))
+
+; expected 351.85, got 351.85808
+(area-pipe 2 3 4)
