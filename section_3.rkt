@@ -109,13 +109,24 @@
 
 ; Exercise 3.3.2
 
+; (define TAU 6.28318)
+
+; (define (radius-of-disk r)
+;   (* (/ TAU 2)
+;      (* r r)))
+
+; (define (volume-cylinder radius height)
+;   (* (radius-of-disk radius) height))
+
+; (volume-cylinder 3 10) ; ~= 282.74
+
+; Exercise 3.3.3
+
 (define TAU 6.28318)
 
-(define (radius-of-disk r)
-  (* (/ TAU 2)
-     (* r r)))
+(define (surface-area-cylinder radius height)
+  (+ (* TAU (* radius radius))
+     (* TAU (* radius height))))
 
-(define (volume-cylinder radius height)
-  (* (radius-of-disk radius) height))
-
-(volume-cylinder 3 10) ; ~= 282.74
+; expected 245.04, got 245.04402
+(surface-area-cylinder 3 10)
