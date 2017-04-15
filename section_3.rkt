@@ -70,63 +70,62 @@
 ; Exercise 3.3.1
 ; Conversion from Imperial to Metric
 
-; (define cm-in-inch 2.54)
-; (define inches-in-foot 12)
-; (define feet-in-yard 3)
-; (define yards-in-rod 5.5)
-; (define rods-in-furlong 40)
-; (define furlongs-in-mile 8)
+(define cm-in-inch 2.54)
+(define inches-in-foot 12)
+(define feet-in-yard 3)
+(define yards-in-rod 5.5)
+(define rods-in-furlong 40)
+(define furlongs-in-mile 8)
 
-; (define (inch-to-cm inches)
-;   (* inches cm-in-inch))
+(define (inch-to-cm inches)
+  (* inches cm-in-inch))
 
-; (define (foot-to-inch feet)
-;   (* feet inches-in-foot))
+(define (foot-to-inch feet)
+  (* feet inches-in-foot))
 
-; (define (yard-to-foot yards)
-;   (* yards feet-in-yard))
+(define (yard-to-foot yards)
+  (* yards feet-in-yard))
 
-; (define (rod-to-yard rods)
-;   (* rods yards-in-rod))
+(define (rod-to-yard rods)
+  (* rods yards-in-rod))
 
-; (define (furlong-to-rod furlongs)
-;   (* furlongs rods-in-furlong))
+(define (furlong-to-rod furlongs)
+  (* furlongs rods-in-furlong))
 
-; (define (mile-to-furlong miles)
-;   (* miles furlongs-in-mile))
+(define (mile-to-furlong miles)
+  (* miles furlongs-in-mile))
 
-; (define (foot-to-cm feet)
-;   (inch-to-cm (foot-to-inch feet)))
+(define (foot-to-cm feet)
+  (inch-to-cm (foot-to-inch feet)))
 
-; (define (yard-to-cm yards)
-;   (inch-to-cm (foot-to-inch (yard-to-foot yards))))
+(define (yard-to-cm yards)
+  (inch-to-cm (foot-to-inch (yard-to-foot yards))))
 
-; (define (rod-to-inch rods)
-;   (foot-to-inch (yard-to-foot (rod-to-yard rods))))
+(define (rod-to-inch rods)
+  (foot-to-inch (yard-to-foot (rod-to-yard rods))))
 
-; (define (mile-to-feet miles)
-;   (yard-to-foot (rod-to-yard (furlong-to-rod (mile-to-furlong miles)))))
+(define (mile-to-feet miles)
+  (yard-to-foot (rod-to-yard (furlong-to-rod (mile-to-furlong miles)))))
 
 ; Exercise 3.3.2
 
-; (define TAU 6.28318)
+(define TAU 6.28318)
 
-; (define (radius-of-disk r)
-;   (* (/ TAU 2)
-;      (* r r)))
+(define (radius-of-disk r)
+  (* (/ TAU 2)
+     (* r r)))
 
-; (define (volume-cylinder radius height)
-;   (* (radius-of-disk radius) height))
+(define (volume-cylinder radius height)
+  (* (radius-of-disk radius) height))
 
-; (volume-cylinder 3 10) ; ~= 282.74
+; expected 282.74, got 282.7431
+; (volume-cylinder 3 10)
 
 ; Exercise 3.3.3
-
-(define TAU 6.28318)
 
 (define (surface-area-cylinder radius height)
   (+ (* TAU (* radius radius))
      (* TAU (* radius height))))
 
 ; expected 245.04, got 245.04402
-(surface-area-cylinder 3 10)
+; (surface-area-cylinder 3 10)
