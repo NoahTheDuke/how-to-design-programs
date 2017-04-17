@@ -14,4 +14,3 @@
 (what-kind 1 0 -1)
 (what-kind 2 4 2)
 (what-kind 1 0 15)
-
