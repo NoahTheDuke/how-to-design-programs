@@ -8,7 +8,7 @@
 (define ex-2 (cons 1.00 empty))
 (define ex-3 (cons 17.05 (cons 1.22 (cons 2.59 empty))))
 
-; sum: a-lon -> number
+; sum : a-lon -> number
 (define (sum a-lon)
   (cond
     [(empty? a-lon) 0]

@@ -22,14 +22,14 @@
 (define a-lon-4 (cons 1 (cons 2 (cons 3 (cons 4 empty)))))
 (define a-lon-5 (cons 1 (cons 2 (cons 3 (cons 4 (cons 5 empty))))))
 
-; how-many-symbols?: a-los -> number
+; how-many-symbols? : a-los -> number
 (define (how-many-symbols? a-los)
   (cond
     [(empty? a-los) 0]
     [(symbol? (first a-los)) (+ 1 (how-many-symbols? (rest a-los)))]
     [else (rest a-los)]))
 
-; how-many-numbers? a-lon -> number
+; how-many-numbers? : a-lon -> number
 (define (how-many-numbers? a-lon)
   (cond
     [(empty? a-lon) 0]

@@ -11,7 +11,7 @@
 (define ex-5 (cons 'human (cons 'being (cons 'real (cons 'hero empty)))))
 (define ex-6 empty)
 
-; contains?: a symbol, list-of-symbols -> bool
+; contains? : a symbol, list-of-symbols -> bool
 (define (contains? a-sym a-los)
   (cond
     [(empty? a-los) false]

@@ -10,7 +10,7 @@
 (define a-lon-3 (cons .75 (cons .95 (cons .25 empty))))
 (define a-lon-4 (cons .75 (cons .2 (cons 10 (cons 5.5 empty)))))
 
-; dollar-store?: upper-limit, a-lon -> number
+; dollar-store? : upper-limit, a-lon -> number
 (define (dollar-store? upper-limit a-lon)
   (cond
     [(empty? a-lon) #t]
