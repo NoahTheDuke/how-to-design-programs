@@ -16,7 +16,7 @@
   (cond
     [(empty? a-los) false]
     [else
-      (or (eq? (first a-los) a-sym)
+      (or (symbol=? a-sym (first a-los))
           (contains? a-sym (rest a-los)))]))
 
 ; Tests
